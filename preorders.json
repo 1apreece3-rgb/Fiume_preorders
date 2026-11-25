@@ -2,6 +2,31 @@
   "updated": "2026-11-25",
   "bookings": [
     {
+      "id": "2026-11-25-2230-test-order",
+      "date": "2026-11-25", "time": "22:30", "guests": 6,
+      "name": "TEST ORDER (not real)",
+      "alerts": ["Ben: nut allergy", "Sophie: gluten free"],
+      "notes": ["This is a test booking for trying the Sending button. It is not a real order."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 2, "dish": "Breaded prawns", "guests": ["Amy", "Tom"] },
+          { "qty": 2, "dish": "Bruschetta", "guests": ["Ben [NUT ALLERGY]", "Sophie [GF]"] },
+          { "qty": 2, "dish": "Pulled pork", "guests": ["Jack", "Lucy"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Chicken breast sous vide", "guests": ["Amy", "Lucy"] },
+          { "qty": 1, "dish": "Fillet steak (medium rare)", "guests": ["Tom"] },
+          { "qty": 1, "dish": "Salmon", "guests": ["Sophie [GF]"] },
+          { "qty": 2, "dish": "Short pasta with sausage", "guests": ["Ben [NUT ALLERGY]", "Jack"] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 3, "dish": "Cheesecake", "guests": ["Amy", "Jack", "Lucy"] },
+          { "qty": 1, "dish": "Gelato, one scoop", "guests": ["Sophie [GF]"] },
+          { "qty": 2, "dish": "Tiramisu", "guests": ["Ben [NUT ALLERGY]", "Tom"] }
+        ]}
+      ]
+    },
+    {
       "id": "2026-11-27-1730-laura-w",
       "date": "2026-11-27", "time": "17:30", "guests": 20,
       "name": "Laura W. / Naseeb K.",
