@@ -1,7 +1,7 @@
 // Fiume Pre-orders service worker.
 // Always tries the network first so new pre-orders show straight away,
 // and falls back to the last saved copy when offline.
-var CACHE = 'fiume-preorders-v7';
+var CACHE = 'fiume-preorders-v8';
 
 self.addEventListener('install', function () { self.skipWaiting(); });
 self.addEventListener('activate', function (e) {

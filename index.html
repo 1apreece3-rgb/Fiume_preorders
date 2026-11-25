@@ -275,6 +275,29 @@
     });
     return out;
   }
+  function courseWord(c) {
+    var m = { 'starters': 'Starters', 'mains': 'Mains', 'desserts': 'Desserts', 'sides and extras': 'Sides' };
+    return m[String(c).toLowerCase()] || c;
+  }
+  // Short status for the booking header, e.g. "✓ Starters sent · Mains 3 of 9"
+  function sendStatus(b) {
+    var s = loadSent(b.id), ticks = tickList(b), parts = [], allDone = true, any = false;
+    b.courses.forEach(function (c) {
+      var ct = ticks.filter(function (x) { return x.course === c.course; });
+      if (!ct.length) return;
+      var cd = ct.filter(function (x) { return s[x.key]; }).length;
+      if (cd) any = true;
+      if (cd < ct.length) allDone = false;
+      if (cd === ct.length) parts.push({ done: true, text: courseWord(c.course) + ' sent' });
+      else if (cd) parts.push({ done: false, text: courseWord(c.course) + ' ' + cd + ' of ' + ct.length });
+    });
+    if (!any) return '';
+    if (allDone) return '✓ All courses sent';
+    var doneParts = parts.filter(function (p) { return p.done; });
+    var lastDone = doneParts.length ? '✓ ' + doneParts[doneParts.length - 1].text : '';
+    var inProg = parts.filter(function (p) { return !p.done; }).map(function (p) { return p.text; });
+    return [lastDone].concat(inProg).filter(Boolean).join(' · ');
+  }
   function sentCount(b) {
     var s = loadSent(b.id), t = tickList(b), n = 0;
     t.forEach(function (x) { if (s[x.key]) n++; });
@@ -288,13 +311,13 @@
     if (!b) { closeSending(); return; }
     var s = loadSent(b.id), ticks = tickList(b);
     var all = ticks.length, done = ticks.filter(function (x) { return s[x.key]; }).length;
-    sendTitle.innerHTML = 'Sending: ' + esc(b.name) + '<small>' + esc(b.time) + ' · ' + b.guests + ' ' + esc(b.guestsLabel || 'guests') + ' · ' + done + ' of ' + all + ' dishes sent</small>';
+    sendTitle.innerHTML = 'Sending: ' + esc(b.name) + '<small>' + esc(b.time) + ' · ' + b.guests + ' ' + esc(b.guestsLabel || 'guests') + ' · ' + (sendStatus(b) || 'Nothing sent yet') + '</small>';
     var html = '<p class="send-hint">Tap a name as their dish leaves the kitchen. Tap again to undo. Ticks are saved on this phone only.</p>';
     if (b.alerts && b.alerts.length) html += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
     b.courses.forEach(function (c) {
       var ct = ticks.filter(function (x) { return x.course === c.course; });
       var cd = ct.filter(function (x) { return s[x.key]; }).length;
-      html += '<div class="send-course' + (cd === ct.length && ct.length ? ' done' : '') + '">' + esc(c.course) + '<span>' + (cd === ct.length && ct.length ? '✓ All sent' : cd + ' of ' + ct.length + ' sent') + '</span></div>';
+      html += '<div class="send-course' + (cd === ct.length && ct.length ? ' done' : '') + '">' + esc(c.course) + '<span>' + (cd === ct.length && ct.length ? '✓ ' + esc(courseWord(c.course)) + ' sent' : cd + ' of ' + ct.length + ' sent') + '</span></div>';
       c.items.forEach(function (i) {
         var it = ct.filter(function (x) { return x.dish === i.dish; });
         var idone = it.filter(function (x) { return s[x.key]; }).length;
@@ -340,14 +363,15 @@
     var isToday = b.date === todayStr(0);
     var sc = isToday ? sentCount(b) : null;
     if (b.provisional) flags += '<span class="flag warn">Provisional</span>';
-    if (sc && sc.sent) flags += '<span class="flag sendflag">' + (sc.sent === sc.total ? '✓ All sent' : '🍽 ' + sc.sent + ' of ' + sc.total + ' sent') + '</span>';
+    var st = isToday ? sendStatus(b) : '';
+    if (st) flags += '<span class="flag sendflag">' + esc(st) + '</span>';
     if (b.alerts && b.alerts.length) flags += '<span class="flag alert">⚠ ' + b.alerts.length + ' allerg' + (b.alerts.length > 1 ? 'ies / dietary' : 'y / dietary') + '</span>';
     if (b.changes && b.changes.length) flags += '<span class="flag upd">↻ Updated</span>';
     if (b.photos && b.photos.length) flags += '<span class="flag muted">📄 Written order</span>';
     if (b.notes && b.notes.length) flags += '<span class="flag muted">' + b.notes.length + ' note' + (b.notes.length > 1 ? 's' : '') + '</span>';
 
     var body = '';
-    if (isToday) body += '<button type="button" class="send-btn" data-send="' + esc(b.id) + '">🍽 Sending' + (sc.sent ? ' <small>(' + sc.sent + ' of ' + sc.total + ' sent)</small>' : '') + '</button>';
+    if (isToday) body += '<button type="button" class="send-btn" data-send="' + esc(b.id) + '">🍽 Sending' + (st ? ' <small>(' + esc(st) + ')</small>' : '') + '</button>';
     if (b.alerts && b.alerts.length) body += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
     if (b.notes && b.notes.length) body += '<div class="notes">' + b.notes.map(function (n) { return '<div>' + esc(n) + '</div>'; }).join('') + '</div>';
     if (b.changes && b.changes.length) body += '<div class="changes"><div class="changes-label">Changes</div>' + b.changes.slice().reverse().map(function (c) { return '<div>' + esc(c) + '</div>'; }).join('') + '</div>';
