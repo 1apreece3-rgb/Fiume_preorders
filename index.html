@@ -101,6 +101,10 @@
   .alerts div + div { margin-top: 2px; }
   .notes { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--warn-soft); color: #5c3d00; font-size: 14px; }
   .notes div + div { margin-top: 4px; }
+  .changes { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: #e8eef6; color: #1f3a5c; font-size: 14px; }
+  .changes-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .changes div + div { margin-top: 4px; }
+  .flag.upd { background: #e8eef6; color: #1f3a5c; }
   .orig { margin: 14px 0 4px; }
   .orig-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
   .orig-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -195,7 +199,7 @@
   }
   function matches(b, q) {
     if (!q) return true;
-    var hay = [b.name, (b.alerts || []).join(' '), (b.notes || []).join(' ')];
+    var hay = [b.name, (b.alerts || []).join(' '), (b.notes || []).join(' '), (b.changes || []).join(' ')];
     b.courses.forEach(function (c) { c.items.forEach(function (i) { hay.push(i.dish, i.guests.join(' ')); }); });
     return hay.join(' ').toLowerCase().indexOf(q) !== -1;
   }
@@ -205,12 +209,14 @@
     var flags = '';
     if (b.provisional) flags += '<span class="flag warn">Provisional</span>';
     if (b.alerts && b.alerts.length) flags += '<span class="flag alert">⚠ ' + b.alerts.length + ' allerg' + (b.alerts.length > 1 ? 'ies / dietary' : 'y / dietary') + '</span>';
+    if (b.changes && b.changes.length) flags += '<span class="flag upd">↻ Updated</span>';
     if (b.photos && b.photos.length) flags += '<span class="flag muted">📄 Written order</span>';
     if (b.notes && b.notes.length) flags += '<span class="flag muted">' + b.notes.length + ' note' + (b.notes.length > 1 ? 's' : '') + '</span>';
 
     var body = '';
     if (b.alerts && b.alerts.length) body += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
     if (b.notes && b.notes.length) body += '<div class="notes">' + b.notes.map(function (n) { return '<div>' + esc(n) + '</div>'; }).join('') + '</div>';
+    if (b.changes && b.changes.length) body += '<div class="changes"><div class="changes-label">Changes</div>' + b.changes.slice().reverse().map(function (c) { return '<div>' + esc(c) + '</div>'; }).join('') + '</div>';
     if (b.photos && b.photos.length) {
       body += '<div class="orig"><div class="orig-label">Original order</div><div class="orig-row">' +
         b.photos.map(function (p, i) { return '<button type="button" class="orig-photo" data-src="' + esc(p) + '" aria-label="Open photo ' + (i + 1) + ' of the written order"><img loading="lazy" src="' + esc(p) + '" alt=""></button>'; }).join('') +
