@@ -105,6 +105,40 @@
   .changes-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
   .changes div + div { margin-top: 4px; }
   .flag.upd { background: #e8eef6; color: #1f3a5c; }
+  .send-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+    margin: 14px 0 4px; padding: 14px; border: 0; border-radius: 12px;
+    background: #2f6b3a; color: #fff; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer;
+  }
+  .send-btn small { font-weight: 500; opacity: .85; }
+  .flag.sendflag { background: #e3f1e5; color: #2f6b3a; }
+  .send { position: fixed; inset: 0; background: var(--bg); z-index: 15; display: flex; flex-direction: column; }
+  .send[hidden] { display: none; }
+  .send-head { background: #2f6b3a; color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+  .send-head h3 { margin: 0; font-size: 18px; line-height: 1.2; flex: 1; }
+  .send-head small { display: block; font-weight: 500; font-size: 13px; opacity: .85; }
+  .send-head button { background: none; border: 0; color: #fff; font-size: 30px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+  .send-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 14px 40px; max-width: 760px; width: 100%; margin: 0 auto; box-sizing: border-box; }
+  .send-hint { color: var(--muted); font-size: 13px; margin: 2px 2px 10px; }
+  .send-course { display: flex; justify-content: space-between; align-items: baseline; margin: 22px 2px 8px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .send-course span { letter-spacing: 0; text-transform: none; font-size: 13px; color: var(--muted); font-weight: 600; }
+  .send-course.done span { color: #2f6b3a; }
+  .send-dish { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+  .send-dish.done { opacity: .55; }
+  .send-dish-name { font-weight: 700; margin-bottom: 8px; display: flex; justify-content: space-between; gap: 8px; }
+  .send-dish-name span { color: var(--muted); font-weight: 600; font-size: 13px; white-space: nowrap; }
+  .send-names { display: flex; flex-wrap: wrap; gap: 8px; }
+  .gtick {
+    min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 2px solid var(--line);
+    background: #fff; color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .gtick::before { content: ""; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--muted); box-sizing: border-box; flex: none; }
+  .gtick.sent { background: #e3f1e5; border-color: #2f6b3a; color: #2f6b3a; text-decoration: line-through; }
+  .gtick.sent::before { content: "✓"; border: 0; background: #2f6b3a; color: #fff; font-size: 12px; line-height: 18px; text-align: center; text-decoration: none; }
+  .gtick .tag { text-decoration: none; }
+  .send-reset { display: block; margin: 28px auto 0; background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 10px 18px; font: inherit; font-size: 14px; cursor: pointer; }
+  .send-reset.armed { border-color: #a12d1b; color: #a12d1b; }
   .orig { margin: 14px 0 4px; }
   .orig-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
   .orig-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -164,6 +198,11 @@
     <footer id="foot">Fiume Italian Kitchen · Compton, Wolverhampton</footer>
   </div>
 
+<div class="send" id="sendView" role="dialog" aria-modal="true" aria-labelledby="sendTitle" hidden>
+  <div class="send-head"><h3 id="sendTitle"></h3><button type="button" id="sendClose" aria-label="Close sending">×</button></div>
+  <div class="send-body" id="sendBody"></div>
+</div>
+
 <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Written order" hidden>
   <div class="viewer-bar"><span>Tap photo to zoom · <a id="viewerLink" href="#" target="_blank" rel="noopener">Open full size</a></span><button type="button" id="viewerClose" aria-label="Close">×</button></div>
   <div class="viewer-img" id="viewerBox"><img id="viewerImg" alt="Photo of the written order"></div>
@@ -204,16 +243,111 @@
     return hay.join(' ').toLowerCase().indexOf(q) !== -1;
   }
 
+  // ---------- Sending (today's bookings only, ticks saved on this device) ----------
+  var SENT_PREFIX = 'fiume-sent-';
+  function loadSent(id) {
+    try { return JSON.parse(localStorage.getItem(SENT_PREFIX + id) || '{}') || {}; } catch (e) { return {}; }
+  }
+  function saveSent(id, s) {
+    try { localStorage.setItem(SENT_PREFIX + id, JSON.stringify(s)); } catch (e) {}
+  }
+  function cleanOldSent() {
+    try {
+      var today = todayStr(0);
+      for (var i = localStorage.length - 1; i >= 0; i--) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(SENT_PREFIX) === 0 && k.slice(SENT_PREFIX.length, SENT_PREFIX.length + 10) < today) localStorage.removeItem(k);
+      }
+    } catch (e) {}
+  }
+  // One tick per guest per dish. Key survives reordering; n separates repeated names.
+  function tickList(b) {
+    var out = [];
+    b.courses.forEach(function (c) {
+      c.items.forEach(function (i) {
+        var seen = {};
+        var gs = i.guests.length ? i.guests : Array.apply(null, Array(i.qty)).map(function (_, n) { return '#' + (n + 1); });
+        gs.forEach(function (g) {
+          seen[g] = (seen[g] || 0) + 1;
+          out.push({ course: c.course, dish: i.dish, guest: g, key: c.course + '|' + i.dish + '|' + g + '|' + seen[g] });
+        });
+      });
+    });
+    return out;
+  }
+  function sentCount(b) {
+    var s = loadSent(b.id), t = tickList(b), n = 0;
+    t.forEach(function (x) { if (s[x.key]) n++; });
+    return { sent: n, total: t.length };
+  }
+
+  var sendView = document.getElementById('sendView'), sendBody = document.getElementById('sendBody'), sendTitle = document.getElementById('sendTitle');
+  var sendingId = null;
+  function renderSending() {
+    var b = data.bookings.find(function (x) { return x.id === sendingId; });
+    if (!b) { closeSending(); return; }
+    var s = loadSent(b.id), ticks = tickList(b);
+    var all = ticks.length, done = ticks.filter(function (x) { return s[x.key]; }).length;
+    sendTitle.innerHTML = 'Sending: ' + esc(b.name) + '<small>' + esc(b.time) + ' · ' + b.guests + ' ' + esc(b.guestsLabel || 'guests') + ' · ' + done + ' of ' + all + ' dishes sent</small>';
+    var html = '<p class="send-hint">Tap a name as their dish leaves the kitchen. Tap again to undo. Ticks are saved on this phone only.</p>';
+    if (b.alerts && b.alerts.length) html += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
+    b.courses.forEach(function (c) {
+      var ct = ticks.filter(function (x) { return x.course === c.course; });
+      var cd = ct.filter(function (x) { return s[x.key]; }).length;
+      html += '<div class="send-course' + (cd === ct.length && ct.length ? ' done' : '') + '">' + esc(c.course) + '<span>' + (cd === ct.length && ct.length ? '✓ All sent' : cd + ' of ' + ct.length + ' sent') + '</span></div>';
+      c.items.forEach(function (i) {
+        var it = ct.filter(function (x) { return x.dish === i.dish; });
+        var idone = it.filter(function (x) { return s[x.key]; }).length;
+        html += '<div class="send-dish' + (idone === it.length && it.length ? ' done' : '') + '"><div class="send-dish-name">' + i.qty + '× ' + esc(i.dish) + '<span>' + idone + '/' + it.length + '</span></div><div class="send-names">' +
+          it.map(function (x) {
+            return '<button type="button" class="gtick' + (s[x.key] ? ' sent' : '') + '" data-key="' + esc(x.key) + '" aria-pressed="' + (!!s[x.key]) + '">' + guestHtml(x.guest) + '</button>';
+          }).join('') + '</div></div>';
+      });
+    });
+    html += '<button type="button" class="send-reset" id="sendReset">Clear all ticks</button>';
+    sendBody.innerHTML = html;
+  }
+  function openSending(id) {
+    sendingId = id; renderSending(); sendView.hidden = false; sendBody.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSending() {
+    sendView.hidden = true; sendingId = null; document.body.style.overflow = ''; render();
+  }
+  document.getElementById('sendClose').onclick = closeSending;
+  sendBody.addEventListener('click', function (e) {
+    if (!sendingId) return;
+    var t = e.target.closest('.gtick');
+    if (t) {
+      var s = loadSent(sendingId), k = t.getAttribute('data-key');
+      if (s[k]) delete s[k]; else s[k] = true;
+      saveSent(sendingId, s);
+      var top = sendBody.scrollTop; renderSending(); sendBody.scrollTop = top;
+      return;
+    }
+    var r = e.target.closest('#sendReset');
+    if (r) {
+      if (!r.classList.contains('armed')) { r.classList.add('armed'); r.textContent = 'Tap again to clear every tick'; return; }
+      saveSent(sendingId, {});
+      var top2 = sendBody.scrollTop; renderSending(); sendBody.scrollTop = top2;
+    }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sendView.hidden) closeSending(); });
+
   function renderBooking(b, q) {
     var isOpen = open[b.id] || !!q;
     var flags = '';
+    var isToday = b.date === todayStr(0);
+    var sc = isToday ? sentCount(b) : null;
     if (b.provisional) flags += '<span class="flag warn">Provisional</span>';
+    if (sc && sc.sent) flags += '<span class="flag sendflag">' + (sc.sent === sc.total ? '✓ All sent' : '🍽 ' + sc.sent + ' of ' + sc.total + ' sent') + '</span>';
     if (b.alerts && b.alerts.length) flags += '<span class="flag alert">⚠ ' + b.alerts.length + ' allerg' + (b.alerts.length > 1 ? 'ies / dietary' : 'y / dietary') + '</span>';
     if (b.changes && b.changes.length) flags += '<span class="flag upd">↻ Updated</span>';
     if (b.photos && b.photos.length) flags += '<span class="flag muted">📄 Written order</span>';
     if (b.notes && b.notes.length) flags += '<span class="flag muted">' + b.notes.length + ' note' + (b.notes.length > 1 ? 's' : '') + '</span>';
 
     var body = '';
+    if (isToday) body += '<button type="button" class="send-btn" data-send="' + esc(b.id) + '">🍽 Sending' + (sc.sent ? ' <small>(' + sc.sent + ' of ' + sc.total + ' sent)</small>' : '') + '</button>';
     if (b.alerts && b.alerts.length) body += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
     if (b.notes && b.notes.length) body += '<div class="notes">' + b.notes.map(function (n) { return '<div>' + esc(n) + '</div>'; }).join('') + '</div>';
     if (b.changes && b.changes.length) body += '<div class="changes"><div class="changes-label">Changes</div>' + b.changes.slice().reverse().map(function (c) { return '<div>' + esc(c) + '</div>'; }).join('') + '</div>';
@@ -280,6 +414,8 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) closeViewer(); });
 
   listEl.addEventListener('click', function (e) {
+    var sb = e.target.closest('.send-btn');
+    if (sb) { openSending(sb.getAttribute('data-send')); return; }
     var ph = e.target.closest('.orig-photo');
     if (ph) { openViewer(ph.getAttribute('data-src')); return; }
     var head = e.target.closest('.head');
@@ -305,6 +441,7 @@
         var u = new Date(d.updated + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
         document.getElementById('foot').textContent = 'Last updated ' + u + ' · Fiume Italian Kitchen';
       }
+      cleanOldSent();
       render();
     })
     .catch(function () {
