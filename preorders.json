@@ -152,11 +152,12 @@
       ]
     },
     {
-      "id": "2026-12-02-tbc-ruth-r",
-      "date": "2026-12-02", "time": "TBC", "guests": 14,
+      "id": "2026-12-02-1900-ruth-r",
+      "date": "2026-12-02", "time": "19:00", "guests": 14,
       "name": "Ruth R.",
       "alerts": ["Laura H.: gluten free", "Claire W.: mushroom pasta without walnuts, possible nut allergy (check)", "Chris S.: sausage pasta without cheese, possible dairy intolerance (check)"],
-      "notes": ["Booking time not given in the pre-order email. Check the diary.", "Fiona W. is no longer coming, so 14 guests (booking was for 15). Gemma agreed to amend the numbers.", "Jo Q.'s steak: cooking not given, ask on the night."],
+      "notes": ["Fiona W. is no longer coming, so 14 guests (booking was for 15). Gemma agreed to amend the numbers.", "Jo Q.'s steak: cooking not given, ask on the night."],
+      "changes": ["25 Nov: Booking time confirmed as 19:00."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 2, "dish": "Arancini", "guests": ["Ruth R.", "Chris S. [NO CHEESE]"] },
