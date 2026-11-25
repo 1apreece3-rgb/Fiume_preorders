@@ -66,13 +66,14 @@
       "date": "2026-11-29", "time": "18:30", "guests": 26,
       "name": "Helen C. (Hamiltons)",
       "alerts": ["Andy J.: nut allergy"],
-      "notes": ["Chris J. is choosing an individual starter. Hold his provisional platter.", "Libby N. and Richard N. have steak only, without prawns."],
+      "notes": ["Chris J. confirmed lobster ravioli for his starter, replacing the platter. Check it matches the ravioli on the set menu.", "Libby N. and Richard N. have steak only, without prawns.", "Dawn F., Rachael T. and Helen W. have no starter on the sheet."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 3, "dish": "Bresaola", "guests": ["Tom L.", "Ben C.", "Richard N."] },
           { "qty": 3, "dish": "Burrata", "guests": ["Liz L.", "Libby N.", "Louise T."] },
           { "qty": 3, "dish": "Calamari fritti", "guests": ["Tom C.", "Robbie C.", "Mia W."] },
           { "qty": 1, "dish": "Carpaccio", "guests": ["Jess B."] },
+          { "qty": 1, "dish": "Lobster ravioli", "guests": ["Chris J."] },
           { "qty": 1, "dish": "Prawn cocktail", "guests": ["Andy H."] },
           { "qty": 11, "dish": "Ravioli", "guests": ["Anna H.", "Helen C.", "Gurd K.", "Andy J. [NUT ALLERGY]", "Jin A.", "Lauren B.", "Bukola", "Mall P.", "Sarah N.", "Ruth", "Amy"] }
         ]},
