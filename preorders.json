@@ -32,6 +32,36 @@
       ]
     },
     {
+      "id": "2026-11-27-2000-lindsey-w",
+      "date": "2026-11-27", "time": "20:00", "guests": 9,
+      "name": "Lindsey W. (work Christmas do)",
+      "alerts": ["Sandeep: vegetarian"],
+      "notes": ["Christmas menu, upstairs.", "Lyn is having a main only: no starter and no dessert.", "Carol's fillet steak: cooking not given, ask on the night.", "Pre-order is also on the till."],
+      "photos": ["photos/2026-11-27-2000-lindsey-w-1.jpg"],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 1, "dish": "Beef carpaccio", "guests": ["Mandi"] },
+          { "qty": 3, "dish": "Breaded prawns", "guests": ["Carol", "Donna", "Debbie"] },
+          { "qty": 3, "dish": "Bruschetta", "guests": ["Sharon", "Sandeep [V]", "Lindsey"] },
+          { "qty": 1, "dish": "Pulled pork", "guests": ["Gez"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Chicken breast sous vide", "guests": ["Donna", "Lindsey"] },
+          { "qty": 1, "dish": "Fillet steak", "guests": ["Carol"] },
+          { "qty": 1, "dish": "Pesce spada alla pizzaiola (swordfish)", "guests": ["Lyn"] },
+          { "qty": 1, "dish": "Pizza verdi", "guests": ["Sandeep [V]"] },
+          { "qty": 2, "dish": "Salmon", "guests": ["Gez", "Mandi"] },
+          { "qty": 1, "dish": "Short pasta with duo of sausage", "guests": ["Debbie"] },
+          { "qty": 1, "dish": "Short pasta with mushrooms and walnuts", "guests": ["Sharon"] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 6, "dish": "Cheesecake", "guests": ["Gez", "Mandi", "Sharon", "Donna", "Debbie", "Lindsey"] },
+          { "qty": 1, "dish": "Gelato, one scoop", "guests": ["Sandeep [V]"] },
+          { "qty": 1, "dish": "Tiramisu", "guests": ["Carol"] }
+        ]}
+      ]
+    },
+    {
       "id": "2026-11-27-2030-gurdeep-m",
       "date": "2026-11-27", "time": "20:30", "guests": 15,
       "name": "Gurdeep M.",
