@@ -97,15 +97,16 @@
       "name": "Helen C. (Hamiltons)",
       "alerts": ["Andy J.: nut allergy"],
       "notes": ["Chris J. confirmed lobster ravioli for his starter, replacing the platter. Check it matches the ravioli on the set menu.", "Libby N. and Richard N. have steak only, without prawns.", "Dawn F., Rachael T. and Helen W. have no starter on the sheet."],
+      "changes": ["25 Nov: Sarah N. swapped Ravioli for Burrata."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 3, "dish": "Bresaola", "guests": ["Tom L.", "Ben C.", "Richard N."] },
-          { "qty": 3, "dish": "Burrata", "guests": ["Liz L.", "Libby N.", "Louise T."] },
+          { "qty": 4, "dish": "Burrata", "guests": ["Liz L.", "Libby N.", "Louise T.", "Sarah N."] },
           { "qty": 3, "dish": "Calamari fritti", "guests": ["Tom C.", "Robbie C.", "Mia W."] },
           { "qty": 1, "dish": "Carpaccio", "guests": ["Jess B."] },
           { "qty": 1, "dish": "Lobster ravioli", "guests": ["Chris J."] },
           { "qty": 1, "dish": "Prawn cocktail", "guests": ["Andy H."] },
-          { "qty": 11, "dish": "Ravioli", "guests": ["Anna H.", "Helen C.", "Gurd K.", "Andy J. [NUT ALLERGY]", "Jin A.", "Lauren B.", "Bukola", "Mall P.", "Sarah N.", "Ruth", "Amy"] }
+          { "qty": 10, "dish": "Ravioli", "guests": ["Anna H.", "Helen C.", "Gurd K.", "Andy J. [NUT ALLERGY]", "Jin A.", "Lauren B.", "Bukola", "Mall P.", "Ruth", "Amy"] }
         ]},
         { "course": "Mains", "items": [
           { "qty": 4, "dish": "Chicken", "guests": ["Andy H.", "Dawn F.", "Rachael T.", "Sarah N."] },
@@ -147,6 +148,36 @@
           { "qty": 3, "dish": "Cheesecake", "guests": ["Kal", "Rachel", "Anne"] },
           { "qty": 3, "dish": "Profiteroles", "guests": ["Tricia", "Sarah", "Tracy"] },
           { "qty": 3, "dish": "Tiramisu", "guests": ["Lorraine", "Kelly", "Francesca"] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-02-tbc-ruth-r",
+      "date": "2026-12-02", "time": "TBC", "guests": 14,
+      "name": "Ruth R.",
+      "alerts": ["Laura H.: gluten free", "Claire W.: mushroom pasta without walnuts, possible nut allergy (check)", "Chris S.: sausage pasta without cheese, possible dairy intolerance (check)"],
+      "notes": ["Booking time not given in the pre-order email. Check the diary.", "Fiona W. is no longer coming, so 14 guests (booking was for 15). Gemma agreed to amend the numbers.", "Jo Q.'s steak: cooking not given, ask on the night."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 2, "dish": "Arancini", "guests": ["Ruth R.", "Chris S. [NO CHEESE]"] },
+          { "qty": 4, "dish": "Bruschetta", "guests": ["Deb C.", "Alex M.", "Kathryn H.", "Lydia H."] },
+          { "qty": 2, "dish": "Crêpe", "guests": ["Sharon C.", "Claire W. [NO WALNUTS]"] },
+          { "qty": 5, "dish": "Prawns", "guests": ["Jo Q.", "Lindsey B.", "Kate T.", "Karen T.", "Steph L."] },
+          { "qty": 1, "dish": "Prawns (GF)", "guests": ["Laura H. [GF]"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 5, "dish": "Chicken", "guests": ["Ruth R.", "Sharon C.", "Lindsey B.", "Alex M.", "Steph L."] },
+          { "qty": 2, "dish": "Mushroom pasta", "guests": ["Deb C.", "Lydia H."] },
+          { "qty": 1, "dish": "Mushroom pasta, no walnuts", "guests": ["Claire W. [NO WALNUTS]"] },
+          { "qty": 4, "dish": "Salmon", "guests": ["Kathryn H.", "Kate T.", "Karen T.", "Laura H. [GF]"] },
+          { "qty": 1, "dish": "Sausage pasta, no cheese", "guests": ["Chris S. [NO CHEESE]"] },
+          { "qty": 1, "dish": "Steak", "guests": ["Jo Q."] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 6, "dish": "Cheesecake", "guests": ["Jo Q.", "Lindsey B.", "Deb C.", "Alex M.", "Karen T.", "Lydia H."] },
+          { "qty": 1, "dish": "Nutella crêpe (GF)", "guests": ["Laura H. [GF]"] },
+          { "qty": 1, "dish": "Profiteroles", "guests": ["Claire W. [NO WALNUTS]"] },
+          { "qty": 6, "dish": "Tiramisu", "guests": ["Ruth R.", "Sharon C.", "Kathryn H.", "Chris S. [NO CHEESE]", "Kate T.", "Steph L."] }
         ]}
       ]
     },
@@ -267,6 +298,37 @@
           { "qty": 3, "dish": "Cheesecake", "guests": ["Paul", "Kelly", "Stacey"] },
           { "qty": 3, "dish": "Profiteroles", "guests": ["Dean", "Alicia", "Rafael"] },
           { "qty": 7, "dish": "Tiramisu", "guests": ["James", "Caitlin", "Marie", "Mollie", "Josh", "Krishna", "Sapphire"] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-12-1645-mollie-h",
+      "date": "2026-12-12", "time": "16:45", "guests": 11,
+      "name": "Mollie H. (Podular Systems)",
+      "alerts": ["Manth: vegan"],
+      "notes": ["Booking reduced from 12 to 11 guests.", "Bruschetta for Manth and Lea was asked for \"if possible\". Not yet confirmed by Fiume.", "Antipasto per due: Mollie, Tom, Charlie and Max each chose it, so 2 platters. Pairing Charlie + Max is assumed.", "Tom has no main on the form. The 20oz Tomahawk board (rare, or as recommended) is assumed shared by Mollie and Tom. Confirm.", "George asked for his Pizza sorpresa as a calzone if possible.", "Max ordered bread selection and olives as an extra.", "Dom, Ollie J., Ollie B. and George have no starter. Only Dom, Ollie J., Ollie B. and George ordered a dessert."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 2, "dish": "Antipasto per due (shared)", "guests": ["Mollie + Tom", "Charlie + Max"] },
+          { "qty": 1, "dish": "Bruschetta", "guests": ["Lea"] },
+          { "qty": 1, "dish": "Bruschetta (vegan)", "guests": ["Manth [VEGAN]"] },
+          { "qty": 1, "dish": "Carpaccio", "guests": ["Charlotte"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 1, "dish": "20oz Tomahawk steak board, rare (shared)", "guests": ["Mollie + Tom"] },
+          { "qty": 1, "dish": "Pasta alla Norma (vegan)", "guests": ["Manth [VEGAN]"] },
+          { "qty": 1, "dish": "Pasta con agnello brasato", "guests": ["Charlie"] },
+          { "qty": 2, "dish": "Pesce spada alla pizzaiola (swordfish)", "guests": ["Dom", "Charlotte"] },
+          { "qty": 1, "dish": "Pizza capricciosa", "guests": ["Lea"] },
+          { "qty": 3, "dish": "Pizza sorpresa", "guests": ["Ollie J.", "Ollie B.", "Max"] },
+          { "qty": 1, "dish": "Pizza sorpresa (calzone if possible)", "guests": ["George"] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 1, "dish": "Biscoff cheesecake", "guests": ["Dom"] },
+          { "qty": 3, "dish": "Profiteroles", "guests": ["Ollie J.", "Ollie B.", "George"] }
+        ]},
+        { "course": "Sides and extras", "items": [
+          { "qty": 1, "dish": "Bread selection and olives", "guests": ["Max"] }
         ]}
       ]
     },
