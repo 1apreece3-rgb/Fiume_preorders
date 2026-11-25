@@ -110,11 +110,6 @@
   .orig-row { display: flex; gap: 8px; flex-wrap: wrap; }
   .orig-row button { padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; cursor: zoom-in; width: 84px; height: 110px; }
   .orig-row img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .orig-docs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-  .orig-docs:first-child { margin-top: 0; }
-  .doc-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: inherit; text-decoration: none; font-size: 14px; font-weight: 600; max-width: 100%; }
-  .doc-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .doc-btn small { color: var(--muted); font-weight: 500; }
   .viewer { position: fixed; inset: 0; background: #14100c; z-index: 20; display: flex; flex-direction: column; }
   .viewer[hidden] { display: none; }
   .viewer-bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; color: #fff; font-size: 14px; }
@@ -216,26 +211,16 @@
     if (b.alerts && b.alerts.length) flags += '<span class="flag alert">⚠ ' + b.alerts.length + ' allerg' + (b.alerts.length > 1 ? 'ies / dietary' : 'y / dietary') + '</span>';
     if (b.changes && b.changes.length) flags += '<span class="flag upd">↻ Updated</span>';
     if (b.photos && b.photos.length) flags += '<span class="flag muted">📄 Written order</span>';
-    if (b.documents && b.documents.length) flags += '<span class="flag muted">📎 ' + b.documents.length + ' document' + (b.documents.length > 1 ? 's' : '') + '</span>';
     if (b.notes && b.notes.length) flags += '<span class="flag muted">' + b.notes.length + ' note' + (b.notes.length > 1 ? 's' : '') + '</span>';
 
     var body = '';
     if (b.alerts && b.alerts.length) body += '<div class="alerts">' + b.alerts.map(function (a) { return '<div>⚠ ' + esc(a) + '</div>'; }).join('') + '</div>';
     if (b.notes && b.notes.length) body += '<div class="notes">' + b.notes.map(function (n) { return '<div>' + esc(n) + '</div>'; }).join('') + '</div>';
     if (b.changes && b.changes.length) body += '<div class="changes"><div class="changes-label">Changes</div>' + b.changes.slice().reverse().map(function (c) { return '<div>' + esc(c) + '</div>'; }).join('') + '</div>';
-    var hasPhotos = b.photos && b.photos.length, hasDocs = b.documents && b.documents.length;
-    if (hasPhotos || hasDocs) {
-      body += '<div class="orig"><div class="orig-label">Original order</div>';
-      if (hasPhotos) body += '<div class="orig-row">' +
+    if (b.photos && b.photos.length) {
+      body += '<div class="orig"><div class="orig-label">Original order</div><div class="orig-row">' +
         b.photos.map(function (p, i) { return '<button type="button" class="orig-photo" data-src="' + esc(p) + '" aria-label="Open photo ' + (i + 1) + ' of the written order"><img loading="lazy" src="' + esc(p) + '" alt=""></button>'; }).join('') +
-        '</div>';
-      if (hasDocs) body += '<div class="orig-docs">' +
-        b.documents.map(function (d) {
-          var ext = (d.path.split('.').pop() || '').toUpperCase();
-          var fname = d.path.split('/').pop();
-          return '<a class="doc-btn" href="' + esc(d.path) + '" download="' + esc(fname) + '">⬇ <span>' + esc(d.name || fname) + '</span><small>' + esc(ext) + '</small></a>';
-        }).join('') + '</div>';
-      body += '</div>';
+        '</div></div>';
     }
     b.courses.forEach(function (c) {
       var total = c.items.reduce(function (s, i) { return s + i.qty; }, 0);
