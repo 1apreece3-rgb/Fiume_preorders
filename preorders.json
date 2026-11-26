@@ -117,6 +117,33 @@
       ]
     },
     {
+      "id": "2026-11-28-2015-lisa-p",
+      "date": "2026-11-28", "time": "20:15", "guests": 10,
+      "name": "Lisa P.",
+      "alerts": ["#1: gluten, garlic and onion intolerance"],
+      "notes": ["Booking reduced from 16 to 10 guests. Gemma amended the numbers.", "Dish counts only; no guest names given. #1 is the guest with the gluten, garlic and onion intolerance.", "#1 ordered a gluten-free Pizza prosciutto e rucola, but Fiume cannot do gluten-free pizza. Gemma offered any pasta (not lasagne), any meat (not cotoletta) or any fish. Replacement main not yet confirmed.", "#1's Mozzarella caprese is dressed with olive oil only.", "No desserts on the pre-order."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 1, "dish": "Arancini con pulled pork", "guests": [] },
+          { "qty": 4, "dish": "Insalata noci barbabietola e caprino", "guests": [] },
+          { "qty": 1, "dish": "Mozzarella caprese", "guests": [] },
+          { "qty": 1, "dish": "Mozzarella caprese, dressed with olive oil only", "guests": ["#1 [GF / NO GARLIC / NO ONION]"] },
+          { "qty": 2, "dish": "Pollo fritto", "guests": [] },
+          { "qty": 1, "dish": "Polpette della nonna", "guests": [] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Lasagne al forno", "guests": [] },
+          { "qty": 1, "dish": "Main to be confirmed (GF pizza not available)", "guests": ["#1 [GF / NO GARLIC / NO ONION]"] },
+          { "qty": 1, "dish": "Pasta ai gamberi piccante", "guests": [] },
+          { "qty": 1, "dish": "Pasta all'arrabbiata with chicken", "guests": [] },
+          { "qty": 1, "dish": "Pasta alla bolognese", "guests": [] },
+          { "qty": 1, "dish": "Pasta alla Norma", "guests": [] },
+          { "qty": 1, "dish": "Pasta pollo Alfredo", "guests": [] },
+          { "qty": 2, "dish": "Pollo al dolcelatte", "guests": [] }
+        ]}
+      ]
+    },
+    {
       "id": "2026-11-29-1830-helen-c",
       "date": "2026-11-29", "time": "18:30", "guests": 26,
       "name": "Helen C. (Hamiltons)",
@@ -241,6 +268,32 @@
         ]},
         { "course": "Sides and extras", "items": [
           { "qty": 1, "dish": "Patatine formaggiose", "guests": ["Jack P."] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-03-1700-pam-m",
+      "date": "2026-12-03", "time": "17:00", "guests": 9,
+      "name": "Pam M.",
+      "alerts": [],
+      "notes": ["Christmas set menu, upstairs.", "Table back by 19:30.", "Booking reduced from 10 to 9 guests. Gemma amended the numbers.", "Dish counts only; no guest names given.", "Only 8 desserts: the ninth guest does not want a dessert."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 1, "dish": "Arancini", "guests": [] },
+          { "qty": 2, "dish": "Bruschetta", "guests": [] },
+          { "qty": 1, "dish": "Carpaccio", "guests": [] },
+          { "qty": 2, "dish": "Crêpe", "guests": [] },
+          { "qty": 3, "dish": "Prawns", "guests": [] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 5, "dish": "Chicken", "guests": [] },
+          { "qty": 2, "dish": "Mushroom pasta", "guests": [] },
+          { "qty": 1, "dish": "Salmon", "guests": [] },
+          { "qty": 1, "dish": "Sausage pasta", "guests": [] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 5, "dish": "Cheesecake", "guests": [] },
+          { "qty": 3, "dish": "Profiteroles", "guests": [] }
         ]}
       ]
     },
