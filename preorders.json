@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "bookings": [
     {
       "id": "2026-11-25-2230-test-order",
@@ -274,10 +274,11 @@
     },
     {
       "id": "2026-12-05-2030-gemma-h",
-      "date": "2026-12-05", "time": "20:30", "guests": 22,
+      "date": "2026-12-05", "time": "20:30", "guests": 21,
       "name": "Gemma H.",
       "alerts": [],
-      "notes": ["Guest names requested. Numbers follow the guest order in the submitted sheet.", "Email confirms 5 December. The spreadsheet tab is labelled 7 December."],
+      "notes": ["Guest names requested. Numbers follow the guest order in the submitted sheet.", "Email confirms 5 December. The spreadsheet tab is labelled 7 December.", "One more guest has pulled out, so 21 guests. Not yet known which one, so all 22 sheet orders are still listed. Two more may drop out because of a funeral (19 at worst). Gemma H. will send the final list with names on Friday 27 Nov.", "Gemma H. would like to pop in and pay for the food in advance, so only drinks are paid on the night."],
+      "changes": ["26 Nov: One more guest pulled out; now 21 guests. Which guest is not yet known, so no dishes removed yet."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 6, "dish": "Arancini", "guests": ["#4", "#5", "#6", "#7", "#12", "#22"] },
