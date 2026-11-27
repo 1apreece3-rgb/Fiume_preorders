@@ -167,25 +167,26 @@
       "id": "2026-11-28-2015-lisa-p",
       "date": "2026-11-28", "time": "20:15", "guests": 10,
       "name": "Lisa P.",
-      "alerts": ["#1: gluten, garlic and onion intolerance"],
-      "notes": ["Booking reduced from 16 to 10 guests. Gemma amended the numbers.", "Dish counts only; no guest names given. #1 is the guest with the gluten, garlic and onion intolerance.", "#1 ordered a gluten-free Pizza prosciutto e rucola, but Fiume cannot do gluten-free pizza. Gemma offered any pasta (not lasagne), any meat (not cotoletta) or any fish. Replacement main not yet confirmed.", "#1's Mozzarella caprese is dressed with olive oil only.", "No desserts on the pre-order."],
+      "alerts": ["#1: gluten, garlic, onion and mushroom intolerance"],
+      "notes": ["Booking reduced from 16 to 10 guests. Gemma amended the numbers.", "Dish counts only; no guest names given. #1 is the guest with the gluten, garlic and onion intolerance.", "#1 ordered a gluten-free Pizza prosciutto e rucola, but Fiume cannot do gluten-free pizza. Lisa has now chosen a gluten-free Pasta pollo Alfredo with no onion, garlic or mushrooms. Gemma has not yet replied to confirm.", "#1's Mozzarella caprese is dressed with olive oil only.", "No desserts on the pre-order."],
+      "changes": ["27 Nov: #1 swapped the gluten-free Pizza prosciutto e rucola (not available) for a gluten-free Pasta pollo Alfredo with no onion, garlic or mushrooms."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 1, "dish": "Arancini con pulled pork", "guests": [] },
           { "qty": 4, "dish": "Insalata noci barbabietola e caprino", "guests": [] },
           { "qty": 1, "dish": "Mozzarella caprese", "guests": [] },
-          { "qty": 1, "dish": "Mozzarella caprese, dressed with olive oil only", "guests": ["#1 [GF / NO GARLIC / NO ONION]"] },
+          { "qty": 1, "dish": "Mozzarella caprese, dressed with olive oil only", "guests": ["#1 [GF / NO GARLIC / NO ONION / NO MUSHROOMS]"] },
           { "qty": 2, "dish": "Pollo fritto", "guests": [] },
           { "qty": 1, "dish": "Polpette della nonna", "guests": [] }
         ]},
         { "course": "Mains", "items": [
           { "qty": 2, "dish": "Lasagne al forno", "guests": [] },
-          { "qty": 1, "dish": "Main to be confirmed (GF pizza not available)", "guests": ["#1 [GF / NO GARLIC / NO ONION]"] },
           { "qty": 1, "dish": "Pasta ai gamberi piccante", "guests": [] },
           { "qty": 1, "dish": "Pasta all'arrabbiata with chicken", "guests": [] },
           { "qty": 1, "dish": "Pasta alla bolognese", "guests": [] },
           { "qty": 1, "dish": "Pasta alla Norma", "guests": [] },
           { "qty": 1, "dish": "Pasta pollo Alfredo", "guests": [] },
+          { "qty": 1, "dish": "Pasta pollo Alfredo, gluten free, no onion, garlic or mushrooms", "guests": ["#1 [GF / NO GARLIC / NO ONION / NO MUSHROOMS]"] },
           { "qty": 2, "dish": "Pollo al dolcelatte", "guests": [] }
         ]}
       ]
@@ -221,6 +222,74 @@
           { "qty": 4, "dish": "Lemon meringue", "guests": ["Liz L.", "Louise T.", "Dawn F.", "Bukola"] },
           { "qty": 6, "dish": "Profiteroles", "guests": ["Anna H.", "Tom C.", "Libby N.", "Jin A.", "Sarah N.", "Richard N."] },
           { "qty": 8, "dish": "Tiramisu", "guests": ["Andy H.", "Tom L.", "Andy J. [NUT ALLERGY]", "Lauren B.", "Jess B.", "Helen W.", "Ruth", "Amy"] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-01-1500-emma-w",
+      "date": "2026-12-01", "time": "15:00", "guests": 13,
+      "name": "Emma W. (OSB Group)",
+      "alerts": [],
+      "notes": ["Christmas set menu.", "One more guest was added; Gemma amended the numbers to 13.", "Jagdeep K. has no starter.", "Abiodun A. would like the steak medium well rather than medium rare. David O.'s steak: cooking not given, set menu default is medium rare."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 2, "dish": "Arancini", "guests": ["Clair V.", "Ellie B."] },
+          { "qty": 1, "dish": "Beef carpaccio", "guests": ["Peter O."] },
+          { "qty": 3, "dish": "Bruschetta", "guests": ["Matt C.", "Lauren L.", "Louise H."] },
+          { "qty": 5, "dish": "Prawns", "guests": ["Emma W.", "Louise D.", "Semilore A.", "David O.", "Abiodun A."] },
+          { "qty": 1, "dish": "Pulled pork", "guests": ["Eva J."] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 4, "dish": "Chicken breast", "guests": ["Matt C.", "Emma W.", "Lauren L.", "Clair V."] },
+          { "qty": 5, "dish": "Salmon", "guests": ["Eva J.", "Louise H.", "Louise D.", "Semilore A.", "Peter O."] },
+          { "qty": 2, "dish": "Short pasta with mushrooms (V)", "guests": ["Jagdeep K.", "Ellie B."] },
+          { "qty": 1, "dish": "Steak", "guests": ["David O."] },
+          { "qty": 1, "dish": "Steak (medium well)", "guests": ["Abiodun A."] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 5, "dish": "Cheesecake of the day", "guests": ["Emma W.", "Lauren L.", "Semilore A.", "Clair V.", "Peter O."] },
+          { "qty": 2, "dish": "Profiteroles", "guests": ["Jagdeep K.", "David O."] },
+          { "qty": 6, "dish": "Tiramisu", "guests": ["Matt C.", "Eva J.", "Louise H.", "Louise D.", "Ellie B.", "Abiodun A."] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-01-1845-paul-b",
+      "date": "2026-12-01", "time": "18:45", "guests": 16,
+      "name": "Paul B. (Team Dinner)",
+      "alerts": ["Carolyn D.: peanut allergy", "Karen B.: fish allergy, including crustaceans", "Sandeep: gluten intolerance"],
+      "notes": ["Booking reduced from 18 to 16 guests (Paul's email, 27 Nov).", "Table back by 21:15.", "Sandeep would like Calamari fritti if it can be made gluten free; if not, Crespella ai funghi. Confirm with the kitchen, and check his Scallopina ai funghi can be made gluten free.", "Mark C.'s rib eye: cooking not given, ask on the night.", "No desserts on the pre-order."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 4, "dish": "Arancine con pulled pork", "guests": ["Tiffany G.", "Karen B. [FISH ALLERGY]", "Lia G.", "Neil T."] },
+          { "qty": 1, "dish": "Bruschetta al pomodoro", "guests": ["Calvin"] },
+          { "qty": 2, "dish": "Calamari fritti", "guests": ["Mark C.", "Gary D."] },
+          { "qty": 1, "dish": "Calamari fritti, gluten free if possible (otherwise Crespella ai funghi) [CHECK]", "guests": ["Sandeep [GF]"] },
+          { "qty": 3, "dish": "Carpaccio di bresaola", "guests": ["Carolyn D. [PEANUT ALLERGY]", "Mark W.", "Shaun G."] },
+          { "qty": 1, "dish": "Crespella ai funghi e salsiccia", "guests": ["Chad G."] },
+          { "qty": 1, "dish": "Crostini toscani", "guests": ["Jean W."] },
+          { "qty": 1, "dish": "Mozzarella caprese", "guests": ["Charlotte C."] },
+          { "qty": 2, "dish": "Polpette della nonna", "guests": ["Paul B.", "Kully"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Branzino al vino bianco", "guests": ["Charlotte C.", "Jean W."] },
+          { "qty": 3, "dish": "Lasagna al forno", "guests": ["Karen B. [FISH ALLERGY]", "Kully", "Lia G."] },
+          { "qty": 1, "dish": "Pasta alla bolognese", "guests": ["Carolyn D. [PEANUT ALLERGY]"] },
+          { "qty": 1, "dish": "Pasta alla genovese", "guests": ["Paul B."] },
+          { "qty": 1, "dish": "Pasta con agnello brasato", "guests": ["Calvin"] },
+          { "qty": 1, "dish": "Pasta con salsiccia piccante", "guests": ["Neil T."] },
+          { "qty": 1, "dish": "Pasta pollo Alfredo", "guests": ["Shaun G."] },
+          { "qty": 1, "dish": "Pesce spada alla pizzaiola", "guests": ["Mark W."] },
+          { "qty": 1, "dish": "Pizza diavola with nduja, honey mayo on the side", "guests": ["Tiffany G."] },
+          { "qty": 1, "dish": "Rib eye funghi", "guests": ["Mark C."] },
+          { "qty": 2, "dish": "Salmone in crosta", "guests": ["Chad G.", "Gary D."] },
+          { "qty": 1, "dish": "Scallopina ai funghi", "guests": ["Sandeep [GF]"] }
+        ]},
+        { "course": "Sides and extras", "items": [
+          { "qty": 1, "dish": "Bruschetta al pomodoro", "guests": ["Neil T."] },
+          { "qty": 1, "dish": "Insalata mista", "guests": ["Karen B. [FISH ALLERGY]"] },
+          { "qty": 1, "dish": "Pizza all'aglio", "guests": ["Paul B."] },
+          { "qty": 2, "dish": "Verdure miste", "guests": ["Mark C.", "Charlotte C."] }
         ]}
       ]
     },
@@ -278,6 +347,41 @@
           { "qty": 1, "dish": "Nutella crêpe (GF)", "guests": ["Laura H. [GF]"] },
           { "qty": 1, "dish": "Profiteroles", "guests": ["Claire W. [NO WALNUTS]"] },
           { "qty": 6, "dish": "Tiramisu", "guests": ["Ruth R.", "Sharon C.", "Kathryn H.", "Chris S. [NO CHEESE]", "Kate T.", "Steph L."] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-03-1530-rachael-t",
+      "date": "2026-12-03", "time": "15:30", "guests": 11,
+      "name": "Rachael T. (Precise)",
+      "alerts": [],
+      "notes": ["Square table in the new area, as Gemma confirmed.", "Table back by 18:15.", "Mix of Christmas set menu and main menu dishes (Calamari fritti, Insalata noci, Mozzarella caprese, Rib eye funghi, Flambé di gamberoni, Pasta con funghi e olive are from the main menu).", "Booked for 15:30 per Rachael's email. The form header says 15:45 and 27 Nov 2025, which looks like an old template.", "Only 7 desserts: Max, Rachael, Laura and Gordon have no dessert."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 2, "dish": "Bruschetta", "guests": ["Mollie", "Claire A."] },
+          { "qty": 2, "dish": "Calamari fritti", "guests": ["Max", "Gordon"] },
+          { "qty": 1, "dish": "Insalata noci barbabietola e caprino", "guests": ["Rachael"] },
+          { "qty": 1, "dish": "Mozzarella caprese", "guests": ["Laura"] },
+          { "qty": 4, "dish": "Prawns in garlic butter", "guests": ["Suzanne", "Hayley", "Leigh", "Claire B."] },
+          { "qty": 1, "dish": "Pulled pork arancini balls", "guests": ["Jake"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Fillet steak (medium rare)", "guests": ["Mollie", "Hayley"] },
+          { "qty": 2, "dish": "Fillet steak (medium well)", "guests": ["Suzanne", "Leigh"] },
+          { "qty": 1, "dish": "Fillet steak (well done)", "guests": ["Jake"] },
+          { "qty": 1, "dish": "Flambé di gamberoni", "guests": ["Rachael"] },
+          { "qty": 1, "dish": "Lasagna al forno", "guests": ["Gordon"] },
+          { "qty": 1, "dish": "Pasta con funghi e olive", "guests": ["Laura"] },
+          { "qty": 1, "dish": "Rib eye funghi (medium rare)", "guests": ["Max"] },
+          { "qty": 1, "dish": "Short pasta with mushrooms and walnuts", "guests": ["Claire A."] },
+          { "qty": 1, "dish": "Short pasta with sausage", "guests": ["Claire B."] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 5, "dish": "Cheesecake of the day", "guests": ["Suzanne", "Mollie", "Hayley", "Jake", "Leigh"] },
+          { "qty": 2, "dish": "Italian tiramisu", "guests": ["Claire B.", "Claire A."] }
+        ]},
+        { "course": "Sides and extras", "items": [
+          { "qty": 3, "dish": "Chips instead of mash", "guests": ["Mollie", "Hayley", "Jake"] }
         ]}
       ]
     },
@@ -369,6 +473,36 @@
           { "qty": 4, "dish": "Cheesecake", "guests": ["Jack", "Wayne", "Gill", "Alan"] },
           { "qty": 6, "dish": "Profiteroles", "guests": ["George", "Lynne", "Terry", "Nathan", "Liam", "Ava"] },
           { "qty": 3, "dish": "Tiramisu", "guests": ["Katie", "Chloe", "Chris"] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-12-05-1400-jess-p",
+      "date": "2026-12-05", "time": "14:00", "guests": 10,
+      "name": "Jess P. (Haematology team)",
+      "alerts": ["Buky: lactose intolerant, no cheese", "Jackie: gluten free", "Leanne: gluten free"],
+      "notes": ["Lunch, à la carte menu.", "Table back by 17:00.", "Gemma checked the dietary needs and replied that everything is fine.", "No desserts on the pre-order."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 1, "dish": "Calamari fritti", "guests": ["Buky [NO CHEESE / LACTOSE INTOLERANT]"] },
+          { "qty": 1, "dish": "Carpaccio di bresaola", "guests": ["Tina"] },
+          { "qty": 2, "dish": "Insalata noci barbabietola e caprino", "guests": ["Naomi", "Jess P."] },
+          { "qty": 4, "dish": "Mozzarella caprese", "guests": ["Kerry", "Liz", "Jackie [GF]", "Leanne [GF]"] },
+          { "qty": 2, "dish": "Pollo fritto", "guests": ["Jess S.", "Raj"] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 2, "dish": "Lasagne al forno", "guests": ["Jess S.", "Kerry"] },
+          { "qty": 1, "dish": "Pasta alla bolognese", "guests": ["Liz"] },
+          { "qty": 1, "dish": "Pasta alla Norma (GF)", "guests": ["Jackie [GF]"] },
+          { "qty": 1, "dish": "Pasta alla pugliese (GF)", "guests": ["Leanne [GF]"] },
+          { "qty": 1, "dish": "Pasta con funghi e olive", "guests": ["Tina"] },
+          { "qty": 1, "dish": "Pasta con salsiccia piccante, no cheese", "guests": ["Buky [NO CHEESE / LACTOSE INTOLERANT]"] },
+          { "qty": 1, "dish": "Pasta pollo Alfredo", "guests": ["Raj"] },
+          { "qty": 1, "dish": "Pollo al dolcelatte", "guests": ["Naomi"] },
+          { "qty": 1, "dish": "Scallopina ai funghi", "guests": ["Jess P."] }
+        ]},
+        { "course": "Sides and extras", "items": [
+          { "qty": 3, "dish": "Chips", "guests": ["Jess S.", "Kerry", "Raj"] }
         ]}
       ]
     },
