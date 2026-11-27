@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "bookings": [
     {
       "id": "2026-11-25-2230-test-order",
@@ -28,29 +28,30 @@
     },
     {
       "id": "2026-11-27-1730-laura-w",
-      "date": "2026-11-27", "time": "17:30", "guests": 20,
+      "date": "2026-11-27", "time": "17:30", "guests": 19,
       "name": "Laura W. / Naseeb K.",
       "alerts": ["Rachel W.: nut allergy", "Nisha: gluten free for every course"],
-      "notes": ["Nisha asked for ice cream if available. Confirm her gluten-free dessert."],
+      "notes": ["Nisha asked for ice cream if available. Confirm her gluten-free dessert.", "Tim is no longer coming (unwell). Gemma confirmed no charge on the card."],
+      "changes": ["26 Nov: Tim cancelled (unwell). Removed his Pork arancini balls, Fillet steak and Cheesecake of the day; now 19 guests."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 7, "dish": "Breaded prawns", "guests": ["Helen", "Rachael W.", "Udi", "Yasmin", "Manisha", "Naseeb", "Niamh"] },
           { "qty": 3, "dish": "Bruschetta", "guests": ["Barriya", "Sam", "Malini"] },
           { "qty": 1, "dish": "Italian crêpe with mushrooms", "guests": ["Rachel W. [NUT ALLERGY]"] },
           { "qty": 1, "dish": "Mushroom crêpe (GF)", "guests": ["Nisha [GF]"] },
-          { "qty": 8, "dish": "Pork arancini balls", "guests": ["Caroline", "Laura", "Cheree", "Tim", "Ilona", "Ant", "Prab", "Talvin"] }
+          { "qty": 7, "dish": "Pork arancini balls", "guests": ["Caroline", "Laura", "Cheree", "Ilona", "Ant", "Prab", "Talvin"] }
         ]},
         { "course": "Mains", "items": [
           { "qty": 8, "dish": "Chicken breast sous vide", "guests": ["Helen", "Caroline", "Laura", "Cheree", "Ilona", "Ant", "Niamh", "Prab"] },
           { "qty": 2, "dish": "Fillet of salmon", "guests": ["Barriya", "Udi"] },
-          { "qty": 2, "dish": "Fillet steak", "guests": ["Tim", "Talvin"] },
+          { "qty": 1, "dish": "Fillet steak", "guests": ["Talvin"] },
           { "qty": 3, "dish": "Short pasta with mushrooms", "guests": ["Rachael W.", "Manisha", "Malini"] },
           { "qty": 1, "dish": "Short pasta with mushrooms (GF)", "guests": ["Nisha [GF]"] },
           { "qty": 1, "dish": "Short pasta with mushrooms, no honey drizzle", "guests": ["Yasmin"] },
           { "qty": 3, "dish": "Short pasta with sausage", "guests": ["Rachel W. [NUT ALLERGY]", "Sam", "Naseeb"] }
         ]},
         { "course": "Desserts", "items": [
-          { "qty": 8, "dish": "Cheesecake of the day", "guests": ["Helen", "Caroline", "Tim", "Ilona", "Ant", "Niamh", "Malini", "Talvin"] },
+          { "qty": 7, "dish": "Cheesecake of the day", "guests": ["Helen", "Caroline", "Ilona", "Ant", "Niamh", "Malini", "Talvin"] },
           { "qty": 8, "dish": "Profiteroles", "guests": ["Rachel W. [NUT ALLERGY]", "Barriya", "Udi", "Laura", "Yasmin", "Cheree", "Manisha", "Naseeb"] },
           { "qty": 3, "dish": "Tiramisu", "guests": ["Rachael W.", "Sam", "Prab"] }
         ]}
@@ -113,6 +114,52 @@
           { "qty": 1, "dish": "Egg-free crêpe", "guests": ["Kanika [EGG FREE / V]"] },
           { "qty": 1, "dish": "Profiteroles", "guests": ["Anita P."] },
           { "qty": 8, "dish": "Tiramisu", "guests": ["Ama B.", "Sandy J.", "Kiran", "Didi", "Rimi B.", "Parveen K.", "Cici", "Rhia"] }
+        ]}
+      ]
+    },
+    {
+      "id": "2026-11-28-1700-jaspal-p",
+      "date": "2026-11-28", "time": "17:00", "guests": 22,
+      "name": "Jaspal P.",
+      "alerts": [],
+      "notes": ["Dish counts only; no guest names given. The order was sent by family group (five families).", "21 mains for 22 guests: the 20oz T-bone (medium) is shared by two.", "16 starters: some are sharing starters (garlic bread pizza), so not every guest has their own.", "13 desserts only.", "One kids' meal: spaghetti bolognese, then ice cream.", "One Scaloppina ai funghi was ordered with no mushrooms. Confirm the sauce they want."],
+      "courses": [
+        { "course": "Starters", "items": [
+          { "qty": 3, "dish": "Arancine con pulled pork", "guests": [] },
+          { "qty": 1, "dish": "Bruschetta al pomodoro", "guests": [] },
+          { "qty": 5, "dish": "Calamari fritti", "guests": [] },
+          { "qty": 1, "dish": "Mozzarella caprese", "guests": [] },
+          { "qty": 5, "dish": "Pizza all'aglio (garlic bread pizza)", "guests": [] },
+          { "qty": 1, "dish": "Polpette della nonna", "guests": [] }
+        ]},
+        { "course": "Mains", "items": [
+          { "qty": 1, "dish": "20oz T-bone (medium), to share", "guests": [] },
+          { "qty": 1, "dish": "Branzino al vino bianco", "guests": [] },
+          { "qty": 1, "dish": "Kids spaghetti bolognese", "guests": [] },
+          { "qty": 2, "dish": "Pasta alla bolognese", "guests": [] },
+          { "qty": 1, "dish": "Pasta con salsiccia piccante", "guests": [] },
+          { "qty": 1, "dish": "Pasta del maresciallo", "guests": [] },
+          { "qty": 4, "dish": "Pasta pollo Alfredo", "guests": [] },
+          { "qty": 2, "dish": "Pasta pollo Alfredo, no mushrooms, no tomatoes", "guests": [] },
+          { "qty": 1, "dish": "Pesce spada alla pizzaiola", "guests": [] },
+          { "qty": 1, "dish": "Pizza Carla", "guests": [] },
+          { "qty": 3, "dish": "Pizza sorpresa", "guests": [] },
+          { "qty": 1, "dish": "Pollo al dolcelatte", "guests": [] },
+          { "qty": 1, "dish": "Scaloppina ai funghi", "guests": [] },
+          { "qty": 1, "dish": "Scaloppina ai funghi, no mushrooms", "guests": [] }
+        ]},
+        { "course": "Desserts", "items": [
+          { "qty": 3, "dish": "Biscoff cheesecake", "guests": [] },
+          { "qty": 1, "dish": "Biscoff crêpe", "guests": [] },
+          { "qty": 1, "dish": "Gelato", "guests": [] },
+          { "qty": 1, "dish": "Honeycomb cheesecake", "guests": [] },
+          { "qty": 1, "dish": "Kids ice cream", "guests": [] },
+          { "qty": 5, "dish": "Nutella crêpe", "guests": [] },
+          { "qty": 1, "dish": "Tiramisu", "guests": [] }
+        ]},
+        { "course": "Sides and extras", "items": [
+          { "qty": 2, "dish": "Traditional fries", "guests": [] },
+          { "qty": 2, "dish": "Verdure miste", "guests": [] }
         ]}
       ]
     },
