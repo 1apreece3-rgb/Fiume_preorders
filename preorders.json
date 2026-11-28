@@ -511,8 +511,8 @@
       "date": "2026-12-05", "time": "20:30", "guests": 21,
       "name": "Gemma H.",
       "alerts": [],
-      "notes": ["Guest names requested. Numbers follow the guest order in the submitted sheet.", "Email confirms 5 December. The spreadsheet tab is labelled 7 December.", "One more guest has pulled out, so 21 guests. Not yet known which one, so all 22 sheet orders are still listed. Two more may drop out because of a funeral (19 at worst). Gemma H. will send the final list with names on Friday 27 Nov.", "Gemma H. would like to pop in and pay for the food in advance, so only drinks are paid on the night."],
-      "changes": ["26 Nov: One more guest pulled out; now 21 guests. Which guest is not yet known, so no dishes removed yet."],
+      "notes": ["Guest names requested. Numbers follow the guest order in the submitted sheet.", "Email confirms 5 December. The spreadsheet tab is labelled 7 December.", "One more guest has pulled out, so 21 guests. Not yet known which one, so all 22 sheet orders are still listed. Two more may drop out because of a funeral (19 at worst). Gemma H. will now send the final list with names on Tuesday 1 Dec (one set of parents still sorting childcare).", "Gemma H. would like to pop in and pay for the food in advance, so only drinks are paid on the night."],
+      "changes": ["26 Nov: One more guest pulled out; now 21 guests. Which guest is not yet known, so no dishes removed yet.", "28 Nov: Gemma H. asked to send the final details on Tuesday 1 Dec instead of Friday; Gemma agreed. No dishes changed yet."],
       "courses": [
         { "course": "Starters", "items": [
           { "qty": 6, "dish": "Arancini", "guests": ["#4", "#5", "#6", "#7", "#12", "#22"] },
